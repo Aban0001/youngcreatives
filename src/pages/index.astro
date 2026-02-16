@@ -1,7 +1,8 @@
 ---
 import Header from "./components/Header.astro";
 import { Image } from "astro:assets";
-import Card from "./components/Bigcard.astro";
+import Card from "./components/Card.astro";
+import Bigcard from "./components/Bigcard.astro";
 import "./styles/general.css";
 ---
 
@@ -35,8 +36,8 @@ import "./styles/general.css";
       <!-- <section>
         <h2>Bureauer du kan komme i dialog med</h2>
         <p>Du ved hvem du taler med, og hvad de kan giv dig feedback på</p>
-      </section>
-    
+      </section> -->
+
       <section>
         <h2>Sådan forgår aftenen</h2>
         <ul>
@@ -45,23 +46,22 @@ import "./styles/general.css";
           <li>Du får konkret feedback på dit arbejde</li>
           <li>Du kan deltage, selvom du ikke har en portfolio</li>
         </ul>
-    
-        <div>
-          <img src="" />
-          <h3>Møde menneskerne bag YCDK:</h3>
-          <p>Vi ved at at det kan føles grænseoverskridende at møde branchen. Derfor gøre vi det personligt.</p>
-          <p>For at YCDK skal hænge sammen, er vi nødt til at have stærke mennekser bag os. Vi arbejder alle frivilligt og er med til at løfte vores univers til et nyt niveau.</p>
-          <p>Lære os at kende her:</p>
+
+        <div class="grid_2_column">
+          <Bigcard
+            img="/Images/Img6_result.webp"
+            headline="Møde menneskerne bag YCDK:"
+            text="Vi ved at at det kan føles grænseoverskridende at møde branchen. Derfor gøre vi det personligt. For at YCDK skal hænge sammen, er vi nødt til at have stærke mennekser bag os. Vi arbejder alle frivilligt og er med til at løfte vores univers til et nyt niveau. Lære os at kende her:"
+            direction="right"
+          />
+          <Bigcard
+            img="/Images/Img5_result.webp"
+            headline="Du behøver ikke kende nogen"
+            text="De fleste kommer alene. Mange er i tvivl. Det er helt normalt. Ansigt til ansigt er skabt til dig der er i starten af din kreative karriere, og gerne vil tættere på branchen uden at føle dig utilpas. Enten om du har været til en af vores events eller ej, er du mere end velkommen. Her får du et lille indblik i hvordan det foregå, og hvor sjovt vi har det."
+            direction="left"
+          />
         </div>
-    
-        <div>
-          <img src="" />
-          <h3>Du behøver ikke kende nogen</h3>
-          <p>De fleste kommer alene. Mange er i tvivl. Det er helt normalt.</p>
-          <p>Ansigt til ansigt er skabt til dig der er i starten af din kreative karriere, og gerne vil tættere på branchen uden at føle dig utilpas.</p>
-          <p>Enten om du har været til en af vores events eller ej, er du mere end velkommen. Her får du et lille indblik i hvordan det foregå, og hvor sjovt vi har det.</p>
-        </div>
-      </section> -->
+      </section>
 
       <!-- <style is:global>
           a {
