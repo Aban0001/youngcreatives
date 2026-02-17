@@ -78,6 +78,8 @@ h3 {
 p {
   font-family: var(--font-body);
   font-weight: 300;
+  line-height: 1.7;
+  margin-top: 1rem;
 }
 
 ul {
@@ -321,6 +323,7 @@ section > .btn {
 
 .evening-section {
   padding: 8rem 2rem;
+  text-align: center;
 }
 
 .evening-section h2 {
@@ -346,6 +349,20 @@ section > .btn {
 
 .evening-section ul li::marker {
   color: var(--color-venice-blue);
+}
+
+.evening-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.evening-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.evening-section li {
+  margin-bottom: 0.8rem;
 }
 
 /** Evening Sektion Slut **/

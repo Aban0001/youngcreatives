@@ -7,12 +7,21 @@ const { text, link } = Astro.props;
 <style>
   .btn {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #1c2e40;
-    color: white;
+    padding: 0.8rem 2rem;
+    background-color: var(--color-venice-blue);
+    color: var(--color-white);
+
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+
     text-decoration: none;
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 999px;
+    transition: 0.2s ease;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
   }
 
   .dark {
