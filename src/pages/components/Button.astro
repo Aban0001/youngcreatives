@@ -1,0 +1,27 @@
+---
+const { text, link } = Astro.props;
+---
+
+<a href={link} class="btn center">{text}</a>
+
+<style>
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1c2e40;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  .dark {
+    background-color: #1c2e40;
+    color: white;
+  }
+
+  .pink {
+    background-color: var(--color-pink);
+    color: var(--color-venice-blue);
+  }
+</style>

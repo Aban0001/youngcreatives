@@ -3,13 +3,24 @@ const img = Astro.props.img;
 const headline = Astro.props.headline;
 const text = Astro.props.text;
 const direction = Astro.props.direction;
+const buttonText = Astro.props.buttonText;
+const buttonLink = Astro.props.buttonLink;
 ---
 
 <article class={direction}>
   <img src={img} />
+
   <div class="content">
     <h3>{headline}</h3>
     <p>{text}</p>
+
+    {
+      buttonText && (
+        <a href={buttonLink} class="cta">
+          {buttonText}
+        </a>
+      )
+    }
   </div>
 </article>
 
@@ -31,6 +42,34 @@ const direction = Astro.props.direction;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1c2e40;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cta {
+    align-self: flex-start;
+    padding: 0.8rem 1.6rem;
+    background-color: var(--color-venice-blue);
+    color: var(--color-white);
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-top: 1rem;
   }
 
   @media screen and (width >= 768px) {
@@ -61,8 +100,12 @@ const direction = Astro.props.direction;
       max-width: 45%;
     }
 
-    article.right {
+    article.left {
       flex-direction: row-reverse;
+    }
+
+    .cta {
+      margin-top: 2rem;
     }
   }
 </style>

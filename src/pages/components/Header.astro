@@ -1,9 +1,17 @@
 ---
+import Navigation from "./Navigation.astro";
 const { titel, text } = Astro.props;
 ---
 
-<header>
-  <nav><a href="">Logo</a><button>Kontakt</button></nav>
-  <h1>{titel}</h1>
-  <p>{text}</p>
+<header class="hero">
+  <nav class="hero-nav">
+    <img src="/Images/YCDK_Short_Logo.svg" alt="YCDK Logo" class="logo" />
+
+    <a href="/about.astro" class="cta">Om Os</a>
+  </nav>
+
+  <div class="hero-content">
+    <img src="/Images/YCDK_Long_Logo.svg" alt="Young Creatives Denmark" class="hero-logo" />
+    <p>{text}</p>
+  </div>
 </header>

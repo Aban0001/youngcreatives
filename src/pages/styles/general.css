@@ -1,3 +1,23 @@
+:root {
+  /* === Primary Colors === */
+  --color-venice-blue: #00324f; /* mørk blå */
+  --color-malibu: #5bafd6; /* lys blå */
+  --color-pink: #ff93c8; /* carnation pink */
+  --color-pink-light: #ffe4f2; /* meget lys pink */
+
+  /* === Secondary Colors === */
+  --color-black: #000000;
+  --color-grey-800: #4a4a4a;
+  --color-grey-600: #7a7a7a;
+  --color-grey-400: #bdbdbd;
+  --color-white: #ffffff;
+
+  /* === Fonts === */
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-event: "Montserrat Alternates", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,24 +29,331 @@ img {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--color-pink-light);
+  color: var(--color-venice-blue);
+  font-weight: 400;
 }
 
-header,
-section {
+section,
+nav {
   padding: 2rem;
 }
 
 header {
-  background-image: url("/Images/Heroimage_result.webp");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1,
 h2,
-h3,
+h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
 p {
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+ul {
+  padding-left: 0;
+}
+
+ul li {
   margin-bottom: 1rem;
+  position: relative;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+/** Hero Sektion Start **/
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+
+  background-image: url("/Images/Heroimage_result.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-nav {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 2rem;
+  max-width: 600px;
+}
+
+.hero-logo {
+  width: 700px;
+  max-width: 90%;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(23%) saturate(1156%) hue-rotate(293deg) brightness(103%) contrast(101%);
+}
+
+.hero p {
+  color: var(--color-pink);
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 500px;
+
+  transform: translateX(40px);
+}
+
+.logo {
+  width: 60px;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(23%) saturate(1156%) hue-rotate(293deg) brightness(103%) contrast(101%);
+}
+
+nav {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.nav-btn {
+  background: var(--color-pink);
+  color: var(--color-white);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+}
+
+.cta {
+  background: var(--color-pink);
+  color: var(--color-white);
+
+  padding: 0.6rem 1.5rem;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/** Hero Sektion Slut **/
+
+/** Event Sektion Start **/
+
+.events-section {
+  padding: 6rem 2rem;
+}
+
+.events-section h2 {
+  font-size: 2.4rem;
+  max-width: 700px;
+  margin-bottom: 1rem;
+}
+
+.events-section > p {
+  max-width: 650px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.events-section > p:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.events-section .grid_3_column {
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.events-section article h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.events-section article p {
+  line-height: 1.5;
+}
+
+.events-section :global(a),
+.events-section :global(button) {
+  display: block;
+  width: fit-content;
+  margin: 3rem auto 0 auto;
+}
+
+section > .btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+}
+
+.center {
+  display: block;
+  margin: 3rem auto 0 auto;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/** Event Sektion Slut **/
+
+/** Opdag Sektion Start **/
+
+.discover-section {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url("/Images/CTAsection.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.discover-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.discover-content {
+  position: relative;
+  max-width: 700px;
+  padding: 2rem;
+  align-content: center;
+}
+
+.discover-section h2 {
+  color: var(--color-pink);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.discover-section p {
+  color: var(--color-pink);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  max-width: 500px;
+
+  transform: translateX(40px);
+}
+
+.discover-section .btn {
+  background-color: var(--color-pink);
+  color: var(--color-venice-blue);
+  font-weight: 600;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
+}
+
+/** Opdag Sektion Slut **/
+
+/** Evening Sektion Start **/
+
+.evening-section {
+  padding: 8rem 2rem;
+}
+
+.evening-section h2 {
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+.evening-section ul {
+  max-width: 600px;
+  margin-bottom: 6rem;
+  padding-left: 1.2rem;
+}
+
+.evening-section ul li {
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
+}
+
+.evening-section ul {
+  list-style: disc;
+}
+
+.evening-section ul li::marker {
+  color: var(--color-venice-blue);
+}
+
+/** Evening Sektion Slut **/
+
+/** Grids & @Media Sektion Start **/
+
+.card-event {
+  font-family: var(--font-body);
 }
 
 .grid_3_column {
@@ -48,5 +375,77 @@ p {
 
   .grid_2_column {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  header {
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .discover-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/** Footer **/
+
+.footer {
+  background-color: var(--color-venice-blue);
+  padding: 6rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  gap: 3rem;
+}
+
+.footer-logo {
+  width: 250px;
+  max-width: 100%;
+  margin-bottom: 2rem;
+
+  /* gør SVG pink */
+  filter: brightness(0) saturate(100%) invert(76%) sepia(23%) saturate(1156%) hue-rotate(293deg) brightness(103%) contrast(101%);
+}
+
+.footer-left p {
+  max-width: 400px;
+  color: var(--color-grey-400);
+  line-height: 1.6;
+}
+
+.footer-middle h4,
+.footer-right h4 {
+  color: var(--color-pink);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-middle a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-grey-400);
+  margin-bottom: 0.5rem;
+}
+
+.footer-right p {
+  color: var(--color-grey-400);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Desktop */
+@media screen and (width >= 768px) {
+  .footer-container {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
   }
 }

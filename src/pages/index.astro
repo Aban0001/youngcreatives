@@ -1,9 +1,11 @@
 ---
+import Navigation from "./components/Navigation.astro";
 import Header from "./components/Header.astro";
 import { Image } from "astro:assets";
+import "./styles/general.css";
 import Card from "./components/Card.astro";
 import Bigcard from "./components/Bigcard.astro";
-import "./styles/general.css";
+import Button from "./components/Button.astro";
 ---
 
 <html lang="en">
@@ -12,39 +14,45 @@ import "./styles/general.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="robots" content="noindex,nofollow" />
-    <!-- <meta name="viewport" content="width=device-width" /> -->
+    <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Young Creatives Denmark</title>
   </head>
 
   <body>
-    <Header titel="Young Creatives Denmark" text="Et trygt møde mellem unge kreativ og branchen" />
+    <Header titel="" text="Et trygt møde mellem unge kreativ og branchen" />
 
     <main>
-      <section>
+      <section class="events-section">
         <h2>Tage første skridt ind i branchen</h2>
         <p>Mød bureauer ansigt til ansigt, stil de spørgsmål du ikke tør stille online, og få en ærlig fornemmelse af branchen før du vælger retning.</p>
         <p>Små grupper. Ærlig dialog. Ingen pitch fra scene.</p>
 
         <div class="grid_3_column">
           <Card img="/Images/upcomingevent_result.webp" headline="Upcoming event - Ansigt til Ansigt med Marketsquare" text="Møde Marketsquare og få reele indsigt i bureauets arbejde. Afholdes hos reklame bureauet Marketsquare den 3/3/2026" />
-          <Card img="/Images/Card2_result.webp" headline="Ansigt til Ansigt i samarbejde med TV2, The Barn & Matas" text="Møde ... og få reele indsigt i bureauets arbejde..." />
-          <Card img="/Images/Card3_result.webp" headline="Ansigt til Ansigt i samarbejde med NORD DDB" text="Møde ... og få reele indsigt i bureauets arbejde..." />
+          <Card img="/Images/Card2_result.webp" headline="Ansigt til Ansigt i samarbejde med TV2, The Barn & Matas" text="[Afholdt]" />
+          <Card img="/Images/Card3_result.webp" headline="Ansigt til Ansigt i samarbejde med NORD DDB" text="[Afholdt]" />
+        </div>
+        <div class="section-cta">
+          <Button text="Tilmeld dig til vores næste event" link="/about" />
         </div>
       </section>
 
-      <!-- <section>
-        <h2>Bureauer du kan komme i dialog med</h2>
-        <p>Du ved hvem du taler med, og hvad de kan giv dig feedback på</p>
-      </section> -->
+      <section class="discover-section">
+        <div>
+          <h2>Bureauer du kan komme i dialog med</h2>
+          <p>Du ved hvem du taler med, og hvad de kan giv dig feedback på</p>
+          <Button text="Læs mere" link="/about" variant="pink" />
+        </div>
+      </section>
 
-      <section>
+      <section class="evening-section">
         <h2>Sådan forgår aftenen</h2>
         <ul>
-          <li>Du sidder i små grupper</li>
-          <li>Du taler direkte med kreative fra bureauet</li>
-          <li>Du får konkret feedback på dit arbejde</li>
-          <li>Du kan deltage, selvom du ikke har en portfolio</li>
+          <li>Du sidder i små grupper!</li>
+          <li>Du taler direkte med kreative fra bureauet!</li>
+          <li>Du får konkret feedback på dit arbejde!</li>
+          <li>Du kan deltage, selvom du ikke har en portfolio!</li>
         </ul>
 
         <div class="grid_2_column">
@@ -53,27 +61,52 @@ import "./styles/general.css";
             headline="Møde menneskerne bag YCDK:"
             text="Vi ved at at det kan føles grænseoverskridende at møde branchen. Derfor gøre vi det personligt. For at YCDK skal hænge sammen, er vi nødt til at have stærke mennekser bag os. Vi arbejder alle frivilligt og er med til at løfte vores univers til et nyt niveau. Lære os at kende her:"
             direction="right"
+            buttonText="Klik her for at lære os at kende"
+            buttonLink="/about"
           />
+
           <Bigcard
             img="/Images/Img5_result.webp"
             headline="Du behøver ikke kende nogen"
             text="De fleste kommer alene. Mange er i tvivl. Det er helt normalt. Ansigt til ansigt er skabt til dig der er i starten af din kreative karriere, og gerne vil tættere på branchen uden at føle dig utilpas. Enten om du har været til en af vores events eller ej, er du mere end velkommen. Her får du et lille indblik i hvordan det foregå, og hvor sjovt vi har det."
             direction="left"
+            buttonText="Se videoer af vores tidligere events"
+            buttonLink=""
           />
         </div>
       </section>
 
       <!-- <style is:global>
-          a {
-            color: #fff;
-          }
-    
-          .big {
-            padding: 1 rem;
-          }
-        </style> -->
+        body {
+          background-color: #ffe4f2;
+        }
+      </style> -->
     </main>
 
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <img src="/Images/YCDK_Long_Logo.svg" alt="Young Creatives Denmark" class="footer-logo" />
+        </div>
+
+        <div class="footer-middle">
+          <h4>Socials</h4>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+        </div>
+
+        <div class="footer-right">
+          <h4>Telefon</h4>
+          <p>60 91 43 26</p>
+
+          <h4>Adresse</h4>
+          <p>
+            Jacob Cameron Brook,<br />
+            Landskronagade 27, st.,<br />
+            2100 København Ø
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
